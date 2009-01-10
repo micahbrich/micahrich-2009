@@ -21,6 +21,13 @@ namespace :deploy do
     run "#{current_path}/script/process/reaper --dispatcher=dispatch.fcgi"
   end
 
+  desc "Restarting after deployment"
+  task :after_deploy, :roles => [:app, :db, :web] do
+   run "sed 's/# ENV\\[/ENV\\[/g' #{deploy_to}/current/config/environment.rb > #{deploy_to}/current/config/environment.temp"
+   run "mv #{deploy_to}/current/config/environment.temp #{deploy_to}/current/config/environment.rb"
+  end
+
+
 end
 
 # ========================

@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
+  def flickrfetch
+  end
+  
   def index
     @posts = Post.find(:all)
 

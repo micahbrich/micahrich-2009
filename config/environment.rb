@@ -68,6 +68,7 @@ Rails::Initializer.run do |config|
 end
 
 require 'fleakr'
-ActionController::AbstractRequest.relative_url_root = "/flickr"
 
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
+
+ActionController::AbstractRequest.relative_url_root = "/flickr"

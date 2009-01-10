@@ -13,15 +13,15 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   
-  before_filter :get_api_user_and_set
-  
-  def get_api_user_and_set
-    Fleakr.api_key = APP_CONFIG['api_key']
-    @user = Fleakr.user(APP_CONFIG['user_email'])
-    @user.sets.each do |set|
-      if set.title == APP_CONFIG['photoset']
-        @set = set
-      end
-    end
-  end
+#  before_filter :get_api_user_and_set
+#  
+#  def get_api_user_and_set
+#    Fleakr.api_key = APP_CONFIG['api_key']
+#    @user = Fleakr.user(APP_CONFIG['user_email'])
+#    @user.sets.each do |set|
+#      if set.title == APP_CONFIG['photoset']
+#        @set = set
+#      end
+#    end
+#  end
 end

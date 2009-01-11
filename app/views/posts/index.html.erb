@@ -1,18 +1,15 @@
-<h1>Listing posts</h1>
 
-<table>
-  <tr>
-  </tr>
+<%= image_tag @post.image %>
+<h2><%= link_to @post.title, post_path(@post) %></h2>
+<h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
+<%= textilize( @post.description) %>
 
-<% for post in @posts %>
-  <tr>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<p>
+<% unless @prev.blank? %>
+<%= link_to 'Prev', post_path(@prev) %>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New post', new_post_path %>
+<% unless @next.blank? %>
+<%= link_to 'Next', post_path(@next) %>
+<% end %>
+</p>

@@ -1,7 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# one:
-#   column: value
-#
-# two:
-#   column: value
+one:
+  title: MyString
+  description: MyText
+  url: MyString
+  photo_url: MyString
+
+two:
+  title: MyString
+  description: MyText
+  url: MyString
+  photo_url: MyString

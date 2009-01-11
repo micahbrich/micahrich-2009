@@ -25,8 +25,10 @@ Rails::Initializer.run do |config|
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
-  # config.gem 'fleakr'
-
+   config.gem 'fleakr'
+   config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate', 
+       :source => 'http://gems.github.com'
+       
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -67,7 +69,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 end
 
-# require 'fleakr'
+require 'fleakr'
 
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 

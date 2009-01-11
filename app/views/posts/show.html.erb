@@ -1,3 +1,16 @@
+<% @title = "- episode ##{@post.id} - #{@post.title}" %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= image_tag @post.image %>
+<h2><%= link_to @post.title, post_path(@post) %></h2>
+<h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
+<%= textilize( @post.description) %>
+
+<p>
+<% unless @prev.blank? %>
+<%= link_to 'Prev', post_path(@prev) %>
+<% end %>
+
+<% unless @next.blank? %>
+<%= link_to 'Next', post_path(@next) %>
+<% end %>
+</p>

@@ -1,0 +1,14 @@
+
+<% @photos.each do |photo| %>
+
+  <%= image_tag photo.small.url %>
+  <h2><%= link_to photo.title, photo.url %></h2>
+  <h6>Taken at: <%= photo.taken_at.strftime("%A %B %d, %Y") %></h6>
+  <h6>Created at: <%= photo.posted_at.strftime("%A %B %d, %Y") %></h6>
+  <h6>Updated at: <%= photo.updated_at.strftime("%A %B %d, %Y") %></h6>
+  <%= textilize(photo.description) %>
+
+  <%= link_to pluralize(photo.comment_count, 'comment'), photo.url + '#DiscussPhoto' %>
+  <hr/>
+
+<% end %>

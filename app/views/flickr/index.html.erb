@@ -1,9 +1,11 @@
-
-<% @set.photos.reverse.each do |photo| %>
+<%= link_to posts_path %>
+<br/>
+<% @photos.each do |photo| %>
 
   <%= image_tag photo.large.url %>
   <h2><%= link_to photo.title, photo.url %></h2>
-  <h6><%= photo.posted_at.strftime("%A %B %d, %Y") %></h6>
+  <h6>Created at: <%= photo.posted_at.strftime("%A %B %d, %Y") %></h6>
+  <h6>Updated at: <%= photo.updated_at.strftime("%A %B %d, %Y") %></h6>
   <%= textilize(photo.description) %>
 
   <%= link_to pluralize(photo.comment_count, 'comment'), photo.url + '#DiscussPhoto' %>

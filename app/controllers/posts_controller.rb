@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
   
   def archive
-    @posts = Post.find_desc
+    @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
   end
   
   def feed

@@ -2,3 +2,7 @@ _Store
 log/*.log
 tmp/**/*
 db/*.sqlite3
+config/flickr.yml
+config/app_info.yml
+public/fonts/*
+public/stylesheets/*

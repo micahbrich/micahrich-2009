@@ -75,4 +75,4 @@ require 'fleakr'
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 
-ActionController::AbstractRequest.relative_url_root = "/flickr"
+# ActionController::AbstractRequest.relative_url_root = "/flickr"

@@ -6,5 +6,4 @@ class Post < ActiveRecord::Base
 
   attr_accessible :id, :title, :description, :url, :image, :thumb, :created_at, :updated_at, :flickr_id
   
-  
 end

@@ -2,9 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
-  map.fetchr '/fetchr', :controller => 'posts', :action => 'fetchr'
   map.archive '/archive', :controller => 'posts', :action => 'archive'
-  map.resources :posts, :collection => { :fetchr => :put, :gettr => :get, :archive => :get }
+  map.feed '/feed', :controller => 'posts', :action => 'feed'
+  map.feed '/feed.:format', :controller => 'posts', :action => 'feed'
+  map.about '/about', :controller => 'posts', :action => 'about'
+  map.resources :posts, :collection => { :feed => :get, :archive => :get }
   
   # Keep in mind you can assign values other than :controller and :action
 

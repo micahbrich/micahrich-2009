@@ -10,6 +10,10 @@
 </head>
 
 <body>
+  <% if [:notice] %>
+    <div id="flash"><%= flash[:notice] %></div>
+  <% end %>
+  
   <h1><%= link_to @site_name, root_path %></h1>
   <ul id="menu">
     <li><%= link_to 'home', root_path %></li>
@@ -23,6 +27,12 @@
 
   <hr/>
   <div id="footer">
-    <p>All content &copy; <%= link_to @author,  @author_link %>, <%= Time.now.year %>.</p>
+    <p>All content &copy; <%= link_to @author,  @author_link %>, <%= Time.now.year %>.
+      <% if admin? %>
+        <%= link_to 'Log Out.', logout_path %>
+      <% else %>
+        <%= link_to 'Admin.', login_path %>
+      <% end %>
+    </p>
 </body>
 </html>

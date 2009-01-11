@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -6,7 +7,11 @@ ActionController::Routing::Routes.draw do |map|
   map.feed '/feed', :controller => 'posts', :action => 'feed'
   map.feed '/feed.:format', :controller => 'posts', :action => 'feed'
   map.about '/about', :controller => 'posts', :action => 'about'
-  map.resources :posts, :collection => { :feed => :get, :archive => :get }
+  map.resources :posts, :collection => { :feed => :get, :archive => :get }, :has_many => :comments
+  
+  map.resources :sessions
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   
   # Keep in mind you can assign values other than :controller and :action
 

@@ -1,5 +1,38 @@
-  <%= image_tag @post.photo_url %>
-  <h2><%= link_to @post.title, @post.url %></h2>
-  <h6>Created at: <%= @post.created_at.strftime("%A %B %d, %Y") %></h6>
-  <h6>Updated at: <%= @post.updated_at.strftime("%A %B %d, %Y") %></h6>
-  <%= textilize(@post.description) %>
+<%= image_tag @post.image %>
+<h2><%= link_to @post.title, post_path(@post) %></h2>
+<h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
+<%= textilize( @post.description) %>
+
+<p>
+<% unless @prev.blank? %>
+<%= link_to 'Prev', post_path(@prev) %>
+<% end %>
+
+<% unless @next.blank? %>
+<%= link_to 'Next', post_path(@next) %>
+<% end %>
+</p>
+
+<hr/>
+<h3>Comments</h3>
+
+<%= render :partial => 'comments/form' %>
+
+<ul id="comments">
+  <% @post.comments.each do |comment| %>
+    <li id="comment-#{comment.id}">
+      <% if comment.website? %>
+        <h4><%= link_to comment.name, comment.website %></h4>
+      <% else %>
+        <h4><%= comment.name %></h4>
+      <% end %>
+      
+      <% if admin? %>
+      <p><small><%= link_to 'Delete', post_comment_path(@post, comment), :method => :delete, :confirm => 'Are you sure?' %></small></p>
+      <% end %>
+      
+      
+      <%= textilize(comment.body) %>
+    </li>
+  <% end %>
+</ul>

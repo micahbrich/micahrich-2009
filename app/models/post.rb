@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-  named_scope :blog_find, :order => 'created_at DESC'
+  has_many :comments, :dependent => :destroy
+  
+  named_scope :find_desc, :order => 'created_at DESC'
   named_scope :prev, lambda { |p| {:conditions => ["id < ?", p.id], :limit => 1, :order => "id DESC"} }
   named_scope :next, lambda { |p| {:conditions => ["id > ?", p.id], :limit => 1, :order => "id"} }
   

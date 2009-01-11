@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   layout "application", :except => [:feed]
   
   def index
-    @post = Post.blog_find.first
+    @post = Post.find_desc.first
+    @comment = @post.comments.new
+    
     @next = Post.next(@post)
     @prev = Post.prev(@post)
   end
@@ -11,15 +13,17 @@ class PostsController < ApplicationController
   end
   
   def archive
-    @posts = Post.blog_find
+    @posts = Post.find_desc
   end
   
   def feed
-    @posts = Post.blog_find(:limit => 10)
+    @posts = Post.find_desc(:limit => 10)
   end
   
   def show
     @post = Post.find(params[:id])
+    @comment = @post.comments.new
+    
     @next = Post.next(@post)
     @prev = Post.prev(@post)
 

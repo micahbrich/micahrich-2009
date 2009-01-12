@@ -122,6 +122,7 @@ h5 {
 h2 {
 	font: 4.8em/1.4  "quicksand dash", "Quicksand", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	text-transform: lowercase;
+	font-weight: normal;
 	margin-top: 0;
 	margin-bottom: .5em;
 }

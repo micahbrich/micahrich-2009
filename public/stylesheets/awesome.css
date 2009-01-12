@@ -1,7 +1,7 @@
 
 @font-face {
 	font-family: "quicksand dash";
-	src: url("fonts/QuicksandDash.otf") format("opentype");
+	src: url("/fonts/QuicksandDash.otf") format("opentype");
 }
 
 h1 {
@@ -23,7 +23,9 @@ html {
 	margin-bottom: 40px;
 }
 
-
+div#about {
+  width:620px;
+}
 
 a {
 	color: #e04f4f;
@@ -112,14 +114,14 @@ h5 {
 }
 
 h2 {
-	font: 4.8em/1.4  "quicksand dash", "Quicksand", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font: 4.8em/1.4  "quicksand dash", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	text-transform: lowercase;
 	font-weight: normal;
 	margin-top: 0;
 	margin-bottom: .5em;
 }
 
-div#description {
+div#description, div#about p {
 	text-align: left;
 	line-height: 1.6em;
 	margin-bottom: 4em;

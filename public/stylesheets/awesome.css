@@ -1,15 +1,7 @@
-/* @override 
-	http://micahsflickr.local/stylesheets/awesome.css?1231710742
-	http://micahsflickr.local/stylesheets/awesome.css?1231716201
-	http://micahsflickr.local/stylesheets/awesome.css?1231717285
-	http://micahsflickr.local/flickr/stylesheets/awesome.css
-	http://flickr.local/stylesheets/awesome.css?1231746336
-	http://flickr.local/stylesheets/awesome.css?1231749103
-*/
 
 @font-face {
 	font-family: "quicksand dash";
-	src: url("/fonts/QuicksandDash.otf") format("opentype");
+	src: url("fonts/QuicksandDash.otf") format("opentype");
 }
 
 h1 {

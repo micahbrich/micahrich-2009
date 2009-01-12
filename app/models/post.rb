@@ -12,4 +12,7 @@ class Post < ActiveRecord::Base
     30
   end
   
+  def chars
+    self.description.length
+  end
 end

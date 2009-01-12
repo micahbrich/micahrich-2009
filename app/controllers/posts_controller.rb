@@ -32,5 +32,6 @@ class PostsController < ApplicationController
       format.xml  { render :xml => @post }
     end
   end
+  
 
 end

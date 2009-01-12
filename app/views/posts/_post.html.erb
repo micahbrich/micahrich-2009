@@ -1,13 +1,13 @@
 <%= render :partial => 'prev_next' %>
 
 <%= image_tag @post.image, :class => 'image' %>
+
 <h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
 
 
 <h2><%= link_to @post.title, post_path(@post) %></h2>
 
 <div id="description" class="<%= columnizer(@post.chars) %>"><%= textilize( @post.description) %></div>
-
 
 <hr/>
 

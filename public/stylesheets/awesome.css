@@ -3,7 +3,14 @@
 	http://micahsflickr.local/stylesheets/awesome.css?1231716201
 	http://micahsflickr.local/stylesheets/awesome.css?1231717285
 	http://micahsflickr.local/flickr/stylesheets/awesome.css
+	http://flickr.local/stylesheets/awesome.css?1231746336
+	http://flickr.local/stylesheets/awesome.css?1231749103
 */
+
+@font-face {
+	font-family: "quicksand dash";
+	src: url("/fonts/QuicksandDash.otf") format("opentype");
+}
 
 h1 {
 	display: none;
@@ -14,7 +21,7 @@ body {
 	width: 970px;
 	position: relative;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -34,25 +41,66 @@ a:hover {
 	color: #ff7070;
 }
 
+/* @group prev-next */
+
 p#prev-next {
-	margin-bottom: 1.5em;
-	height: 12px;
-	position: relative;
+	display: block;
+	position: absolute;
+	top: -12px;
+	right: 0;
 }
 
 a.prev {
-	padding: 5px;
 	text-transform: lowercase;
-	position: absolute;
-	top: -5px;
-	left: 0;
+	display: block;
+	padding: 5px;
+	float: left;
 }
 
 a.next {
 	text-transform: lowercase;
-	position: absolute;
-	right: 0;
+	display: block;
+	padding: 5px;
+	float: right;
 }
+
+/* @end */
+
+/* @group menu */
+
+ul#menu {
+	height: 28px;
+	padding: 0;
+	margin: 0 auto;
+}
+
+ul#menu li {
+	list-style-type: none;
+	display: block;
+	padding: 5px;
+	text-align: left;
+	float: left;
+	margin-bottom: .5em;
+}
+
+ul#menu li#rss a {
+	display: block;
+	background: url(../images/rss.png) no-repeat 5px 2px;
+	width: 25px;
+	height: 15px;
+	text-indent: -9999px;
+}
+
+ul#menu li#rss a:hover {
+	display: block;
+	background: url(../images/rss_hover.png) no-repeat 5px 2px;
+	width: 25px;
+	height: 15px;
+	text-indent: -9999px;
+}
+
+
+/* @end */
 
 img.image {
 	width: 970px;
@@ -68,18 +116,20 @@ h5 {
 	font-size: .8em;
 	color: gray;
 	text-align: right;
+	margin-bottom: 0;
 }
 
 h2 {
 	font: 4.8em/1.4  "quicksand dash", "Quicksand", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
-	margin-top: 0;
 	text-transform: lowercase;
+	margin-top: 0;
+	margin-bottom: .5em;
 }
 
 div#description {
 	text-align: left;
 	line-height: 1.6em;
-	margin-bottom: 8em;
+	margin-bottom: 4em;
 }
 
 div#description.three-col {
@@ -119,6 +169,7 @@ hr {
 	border-bottom: 3px double #efefef;
 	border-top: 1px solid #efefef;
 	height: 1px;
+	clear: both;
 }
 
 span.required {
@@ -139,6 +190,8 @@ form#new_comment {
 	width: 300px;
 	display: block;
 	float: left;
+	margin-top: 1em;
+	padding-left: 3px;
 }
 
 form#new_comment input, form#new_comment textarea, div#login-form form input {
@@ -174,48 +227,12 @@ form#new_comment input#comment_submit:active {
 
 }
 
-/* @group menu */
-
-ul#menu {
-	margin: 0;
-	padding: 0 0 0 30;
-	text-align: center;
-	position: relative;
-}
-
-ul#menu li {
-	list-style-type: none;
-	display: inline-block;
-	padding: 3px;
-}
-
-ul#menu li#rss {
-	background: url(../images/rss.png) no-repeat center 9px;
-	width: 18px;
-	height: 15px;
-}
-
-ul#menu li#rss a {
-	width: 12px;
-	height: 12px;
-	display: block;
-	padding: 4px;
-	text-indent: -9999px;
-}
-
-ul#menu li#rss:hover {
-		background-image: url(../images/rss_hover.png);
-}
-
-
-
-/* @end */
-
 ul#comments {
 	display: block;
 	width: 620px;
 	float: left;
 	padding-left: 33px;
+	margin-top: 2em;
 }
 
 div#footer {

@@ -7,6 +7,8 @@ ActionController::Routing::Routes.draw do |map|
   map.feed '/feed', :controller => 'posts', :action => 'feed'
   map.feed '/feed.:format', :controller => 'posts', :action => 'feed'
   map.about '/about', :controller => 'posts', :action => 'about'
+  
+  map.gettr '/gettr', :controller => 'posts', :action => 'gettr'
   map.resources :posts, :collection => { :feed => :get, :archive => :get, :gettr => :put }, :has_many => :comments
   
   map.resources :sessions

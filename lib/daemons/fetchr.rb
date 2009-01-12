@@ -3,7 +3,7 @@
 # You might want to change this
 ENV["RAILS_ENV"] ||= "production"
 
-require File.dirname(__FILE__) + "/../../config/environment"
+require File.dirname(__FILE__) + "/../../config/environment.rb"
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 require 'fleakr'
@@ -16,7 +16,7 @@ end
 while($running) do  
   
   Fleakr.api_key = FLICKR_CONFIG['api_key']
-  @user = Fleakr.user(FLICKR_CONFIG['user_email'])
+  @user = Fleakr.user('info@micahrich.com')
   @user.sets.each do |set|
     if set.title == FLICKR_CONFIG['photoset']
       set.photos.each do |photo|
@@ -28,5 +28,5 @@ while($running) do
     end
   end
  
-  sleep 6.hours
+  sleep 7200
 end

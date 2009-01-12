@@ -7,7 +7,7 @@
 
 <h2><%= link_to @post.title, post_path(@post) %></h2>
 
-<div id="description" class="<%= columnizer(@post.chars) %>"><%= textilize( @post.description) %></div>
+<div id="description" class="<%= columnizer(@post.chars) %>"><%= newline_and_textilize(@post.description) %></div>
 
 <hr/>
 

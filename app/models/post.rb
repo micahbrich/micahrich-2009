@@ -15,4 +15,6 @@ class Post < ActiveRecord::Base
   def chars
     self.description.length
   end
+  
+
 end

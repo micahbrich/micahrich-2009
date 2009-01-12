@@ -15,7 +15,7 @@ end
 
 while($running) do  
   
-  Fleakr.api_key = FLICKR_CONFIG['api_key']
+  Fleakr.api_key = 'fb5cf2883adb61c3978689f570542433'
   @user = Fleakr.user('info@micahrich.com')
   @user.sets.each do |set|
     if set.title == FLICKR_CONFIG['photoset']

@@ -4,6 +4,8 @@
 ENV["RAILS_ENV"] ||= "production"
 
 require File.dirname(__FILE__) + "/../../config/environment"
+APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
+FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 
 $running = true
 Signal.trap("TERM") do 
@@ -18,12 +20,13 @@ while($running) do
     if set.title == FLICKR_CONFIG['photoset']
       set.photos.each do |photo|
         @post = Post.find_or_create_by_url(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
-        unless @post.updated_at == photo.updated_at
-          @post = Post.update_attributes!(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
-        end
+        # unless @post.updated_at == photo.updated_at
+        #   @post = Post.update_attributes!(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
+        # end
       end
     end
   end
-  
-  sleep 6.hours
+ 
+ sleep 15 
+#  sleep 6.hours
 end

@@ -7,10 +7,13 @@
 
 	<title><%= @site_name %> <%= @title %></title>
 	<%= auto_discovery_link_tag(:rss, :action => 'feed') %>
-  <%= stylesheet_link_tag 'awesome' %>
+	
 	
   <script type="text/javascript" src="/javascripts/typeface-0.10.js"></script>
   <script type="text/javascript" src="/fonts/quicksand_dash.typeface.js"></script>
+  
+  <%= stylesheet_link_tag 'awesome' %>
+	
 </head>
 
 <body>

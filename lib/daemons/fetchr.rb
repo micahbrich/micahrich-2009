@@ -6,6 +6,7 @@ ENV["RAILS_ENV"] ||= "production"
 require File.dirname(__FILE__) + "/../../config/environment"
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
+require 'fleakr'
 
 $running = true
 Signal.trap("TERM") do 

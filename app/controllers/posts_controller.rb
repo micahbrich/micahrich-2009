@@ -12,6 +12,17 @@ class PostsController < ApplicationController
   def about
   end
   
+  def gettr
+    @user.sets.each do |set|
+      if set.title == 'photoblog'
+        set.photos.each do |photo|
+          @post = Post.find_or_create_by_url(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
+        end
+      end
+    end
+    redirect_to archive_path
+  end
+  
   def archive
     @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
   end

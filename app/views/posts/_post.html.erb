@@ -5,7 +5,7 @@
 <h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
 
 
-<h2 class="typeface-js"><%= link_to @post.title, post_path(@post) %></h2>
+<h2><%= link_to @post.title, post_path(@post), :class=>'typeface-js' %></h2>
 
 <div id="description" class="<%= columnizer(@post.chars) %>"><%= textilize( @post.description) %></div>
 

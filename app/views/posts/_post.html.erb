@@ -1,6 +1,6 @@
-<%= render :partial => 'prev_next' %>
+<%= render :partial => 'posts/prev_next' %>
 
-<%= image_tag @post.image, :class => 'image' %>
+<%= link_to (image_tag @post.image), post_path(@prev), :class => 'image' %>
 
 <h5><%= @post.created_at.strftime("%A %B %d, %Y") %> via <%= link_to 'flickr', @post.url %></h5>
 

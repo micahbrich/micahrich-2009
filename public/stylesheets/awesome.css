@@ -1,3 +1,4 @@
+/* @override http://micahsflickr.local/stylesheets/awesome.css */
 
 @font-face {
 	font-family: "quicksand dash";
@@ -16,6 +17,11 @@ body {
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+p {
+	font-size: 1em;
+	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 html {
@@ -96,7 +102,7 @@ ul#menu li#rss a:hover {
 
 /* @end */
 
-img.image {
+.image {
 	width: 970px;
 }
 
@@ -122,9 +128,12 @@ h2 {
 }
 
 div#description, div#about p {
+	font-size: 1em;
 	text-align: left;
 	line-height: 1.6em;
-	margin-bottom: 4em;
+}
+div#description {
+  margin-bottom: 4em;
 }
 
 div#description.three-col {
@@ -223,6 +232,8 @@ form#new_comment input#comment_submit:active {
 }
 
 ul#comments {
+		font-size: 1em;
+
 	display: block;
 	width: 620px;
 	float: left;
@@ -270,3 +281,31 @@ ul#comments li p {
 	line-height: 1.6;
 	margin-bottom: 1.5em;
 }
+
+/* @group errors */
+
+#errorExplanation {
+
+	background-color: #faef7d;
+	padding: 1em 1em 1em 2em;
+}
+
+#errorExplanation h2 {
+	font: 2.4em/1.4  "quicksand dash", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;;
+	
+}
+
+#errorExplanation ul li {
+	font-size: .75em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	list-style-type: square;
+	color: #e50000;
+}
+
+#errorExplanation ul {
+	padding-left: 15px;
+}
+
+
+
+/* @end */

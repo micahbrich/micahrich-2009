@@ -12,6 +12,10 @@ class CommentsController < ApplicationController
 #    end
 #  end
 
+  def new
+    @comment = @post.comments.new
+  end
+
 
   # POST /comments
   # POST /comments.xml
@@ -25,7 +29,8 @@ class CommentsController < ApplicationController
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         flash[:comment_error] = "Aw, I couldn't save it. Please double check all the boxes!"
-        format.html { redirect_to(@post, @comment) }
+#        format.html { redirect_to(@post, @comment) }
+        format.html { render :action => :new }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end
     end

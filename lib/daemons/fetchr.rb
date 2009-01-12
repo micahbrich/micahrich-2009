@@ -3,7 +3,7 @@
 # You might want to change this
 ENV["RAILS_ENV"] ||= "production"
 
-require File.dirname(__FILE__) + "/../../config/environment.rb"
+require File.dirname(__FILE__) + "/../../config/environment"
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 require 'fleakr'
@@ -22,7 +22,7 @@ while($running) do
       set.photos.each do |photo|
         @post = Post.find_or_create_by_url(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
          unless @post.updated_at == photo.updated_at
-           @post = Post.update_attributes!(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
+           @post.update_attributes!(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
          end
       end
     end

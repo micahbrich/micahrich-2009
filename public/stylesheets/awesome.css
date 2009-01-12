@@ -1,8 +1,11 @@
-/* @override http://micahsflickr.local/stylesheets/awesome.css */
+/* @override 
+	http://micahsflickr.local/stylesheets/awesome.css
+	http://micahrich.com/flickr/stylesheets/awesome.css
+*/
 
 @font-face {
-	font-family: "quicksand dash";
-	src: url("/fonts/QuicksandDash.otf") format("opentype");
+	font-family: "Quicksand";
+	src: url(".././fonts/QuicksandDash.otf") format("opentype");
 }
 
 h1 {
@@ -120,7 +123,7 @@ h5 {
 }
 
 h2 {
-	font: 4.8em/1.4  "quicksand dash", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
+	font: 4.8em/1.4  "Quicksand", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	text-transform: lowercase;
 	font-weight: normal;
 	margin-top: 0;
@@ -254,6 +257,13 @@ div#login-form form input {
 	width: 650px;
 }
 
+input:focus, textarea:focus {
+	border: 3px double #4edae0;
+outline-style:double;
+outline-width:3px;
+outline-color: #4edae0;
+}
+
 div#login-form form label {
 	display: block;
 	text-align: center;
@@ -284,6 +294,11 @@ ul#comments li p {
 
 /* @group errors */
 
+div.fieldWithErrors, div.fieldWithErrors input {
+	display: inline;
+	background-color: #faef7d;
+}
+
 #errorExplanation {
 
 	background-color: #faef7d;
@@ -295,8 +310,13 @@ ul#comments li p {
 	
 }
 
+#errorExplanation p {
+	color: #000;
+}
+
 #errorExplanation ul li {
-	font-size: .75em;
+	font-size: 1em;
+	line-height: 1.6;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	list-style-type: square;
 	color: #e50000;

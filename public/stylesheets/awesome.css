@@ -2,9 +2,8 @@
 	http://micahsflickr.local/stylesheets/awesome.css?1231710742
 	http://micahsflickr.local/stylesheets/awesome.css?1231716201
 	http://micahsflickr.local/stylesheets/awesome.css?1231717285
+	http://micahsflickr.local/flickr/stylesheets/awesome.css
 */
-
-@import url("fontfaces.css");
 
 h1 {
 	display: none;
@@ -59,6 +58,10 @@ img.image {
 	width: 970px;
 }
 
+a img {
+  border:none;
+}
+
 h5 {
 	font-style: italic;
 	font-weight: normal;
@@ -68,7 +71,7 @@ h5 {
 }
 
 h2 {
-	font: 4.8em/1.4 "quicksand dash", Helvetica, sans-serif;
+	font: 4.8em/1.4  "quicksand dash", "Quicksand", "Helvetica Bold", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	margin-top: 0;
 	text-transform: lowercase;
 }
@@ -76,23 +79,23 @@ h2 {
 div#description {
 	text-align: left;
 	line-height: 1.6em;
-	margin-bottom: 3em;
+	margin-bottom: 8em;
 }
 
 div#description.three-col {
 	width: 970px;
 	-webkit-column-count:3;
 	-webkit-column-gap:2.5em;
-	-webkit-column-rule:3px double #efefef;
-
+	-moz-column-count:3;
+	-moz-column-gap:2.5em;
 }
 
 div#description.two-col {
 	width: 650px;
 	-webkit-column-count:2;
 	-webkit-column-gap:2.5em;
-	-webkit-column-rule:3px double #efefef;
-	border-right: 3px double #efefef;
+	-moz-column-count:2;
+	-moz-column-gap:2.5em;
 	padding-right: 1.25em;
 }
 
@@ -100,9 +103,9 @@ div#description.one-col {
 	width: 320px;
 	-webkit-column-count:1;
 	-webkit-column-gap:2.5em;
-	-webkit-column-rule:3px double #efefef;
-	border-right: 3px double #efefef;
-	padding-right: 1.25em;
+	-moz-column-count:1;
+	-moz-column-gap:2.5em;
+	padding-right: .25em;
 }
 
 
@@ -212,7 +215,7 @@ ul#comments {
 	display: block;
 	width: 620px;
 	float: left;
-	padding-left: 25px;
+	padding-left: 33px;
 }
 
 div#footer {
@@ -236,6 +239,10 @@ div#login-form form label {
 div#login-form {
 	width: 650px;
 	margin: 12em auto;
+}
+
+h3.comments {
+  display:none;
 }
 
 ul#comments li {

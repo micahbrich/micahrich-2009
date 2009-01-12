@@ -1,3 +1,5 @@
+/* @override http://micahsflickr.local/flickr/stylesheets/fontfaces.css */
+
 @font-face {
 	font-family: "quicksand dash";
 	src: url("/fonts/QuicksandDash.otf") format("opentype");

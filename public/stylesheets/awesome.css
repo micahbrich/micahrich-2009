@@ -258,10 +258,9 @@ div#login-form form input {
 }
 
 input:focus, textarea:focus {
-	border: 3px double #4edae0;
-outline-style:double;
-outline-width:3px;
-outline-color: #4edae0;
+	border: 3px double #4edae0 !important;
+outline-style:none;
+outline-width: 0px;
 }
 
 div#login-form form label {

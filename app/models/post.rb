@@ -16,5 +16,7 @@ class Post < ActiveRecord::Base
     self.description.length
   end
   
-
+  def full_url
+    "http://www.micahrich.com/blog/posts/#{self.id}"
+  end
 end

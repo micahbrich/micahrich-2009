@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
             CommentMailer.deliver_comment_notifier(@reciever, @comment)
           end
         
-        flash[:notice] = 'Comment was successfully created.'
+        flash[:notice] = "Thanks for the comment! It's been added below"
         format.html { redirect_to(@post, @comment) }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else

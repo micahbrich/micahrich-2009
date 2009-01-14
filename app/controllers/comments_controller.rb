@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        CommentMailer.deliver_micah_notifier(@comment.)
+        CommentMailer.deliver_micah_notifier(@comment)
         @comments = Comment.find(:all, :conditions => ["post_id = ? AND email != ? AND email != ?", @comment.post_id, @comment.email, '*@micahrich.com' ])
           for @reciever in @comments
             CommentMailer.deliver_comment_notifier(@reciever, @comment)

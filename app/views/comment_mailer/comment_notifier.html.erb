@@ -1,15 +1,14 @@
-<p style="font-family:Georgia, serif;">hey,</p> 
-<p style="font-family:Georgia, serif;">once upon a time, you posted a comment on micah's blog. looks like someone else did, too:</p>
-<hr/>
+<p>hey,</p> 
+<p>once upon a time, you posted a comment on micah's blog. looks like someone else did, too:</p>
+<p>---</p>
+<p><%= link_to((image_tag @comment.post.thumb), @comment.post.full_url) %></p>
 
-<p style="font-family:Georgia, serif;"><%= link_to((image_tag @comment.post.thumb), @comment.post.full_url) %></p>
+<p style="font-family:Georgia, serif; font-style: italic;"><%= @comment.body %></p>
 
-<blockquote><%= @comment.body %></blockquote>
+<p style="font-family:Georgia, serif; font-style: italic;">- <%= @comment.name %></p>
 
-<p>- <%= @comment.name %></p>
+<p>---</p>
+<p>If you want to respond, head back over <%= @comment.post.full_url %></p>
 
-<hr/>
-<p style="font-family:Georgia, serif;">If you want to respond, head back over <%= @comment.post.full_url %></p>
-
-<p style="font-family:Georgia, serif;">love,</p>
-<p style="font-family:Georgia, serif; font-style: italic;">micah</p>
+<p>love,</p>
+<p>micah</p>

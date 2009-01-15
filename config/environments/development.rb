@@ -17,7 +17,8 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = true
 
 #delivery method
-config.action_mailer.delivery_method = :smtp
+# config.action_mailer.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :activerecord
 
 # smtp settings
 config.action_mailer.smtp_settings = {

@@ -22,7 +22,8 @@ config.action_view.cache_template_loading            = true
 config.action_mailer.raise_delivery_errors = false
 
 #delivery method
-config.action_mailer.delivery_method = :smtp
+#config.action_mailer.delivery_method = :smtp
+ActionMailer::Base.delivery_method = :activerecord
 
 # smtp settings
 config.action_mailer.smtp_settings = {

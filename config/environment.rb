@@ -68,10 +68,19 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
 end
-
+#flickr
 require 'fleakr'
 
+# ar_mailer  
+require 'action_mailer/ar_mailer'
+
+ActionMailer::Base.perform_deliveries = true  
+ActionMailer::Base.default_charset = 'utf-8'
+ActionMailer::Base.delivery_method = :activerecord
+
+#configs
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 

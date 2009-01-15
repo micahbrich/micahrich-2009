@@ -1,3 +1,5 @@
+#!/usr/local/bin/ruby
+
 require 'fleakr'
 class Fetchr < ActiveRecord::Base
   # This script fetches flickr photos

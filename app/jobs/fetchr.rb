@@ -1,3 +1,4 @@
+require 'fleakr'
 class Fetchr < ActiveRecord::Base
   # This script fetches flickr photos
 

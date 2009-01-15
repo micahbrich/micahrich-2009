@@ -14,7 +14,7 @@ load 'config/deploy'
 namespace :deploy do
 
   task :start, :roles => :app do
-    run "rm -rf /home/#{user}/mma4/public/flickr;ln -s #{current_path}/public /home/#{user}/mma4/public/flickr"
+    run "rm -rf /home/#{user}/mma4/public/blog;ln -s #{current_path}/public /home/#{user}/mma4/public/blog"
   end
 
   task :restart, :roles => :app do

@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  
   has_many :comments, :dependent => :destroy
   
   named_scope :find_desc, :order => 'created_at DESC'
@@ -19,4 +20,5 @@ class Post < ActiveRecord::Base
   def full_url
     "http://www.micahrich.com/blog/posts/#{self.id}"
   end
+
 end

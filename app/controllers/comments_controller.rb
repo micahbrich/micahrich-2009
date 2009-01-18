@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         #mailers
-        unless @comment.email.ends_with('@micahrich.com')
+        unless @comment.email.ends_with?('@micahrich.com')
           CommentMailer.deliver_micah_notifier(@comment)
         end
         @comments = Comment.find(:all, :conditions => ["post_id = ? AND email != ? AND email != ?", @comment.post_id, @comment.email, '*@micahrich.com' ])

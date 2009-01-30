@@ -21,9 +21,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.xml
   def create
-    @comment = @post.comments.build(params[:comment])
-    unless @comment.email_address.blank?
-    
+    unless (params[:email_address]).blank?
+      @comment = @post.comments.build(params[:comment])
       respond_to do |format|
         if @comment.save
           #mailers

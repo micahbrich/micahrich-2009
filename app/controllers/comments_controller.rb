@@ -21,27 +21,33 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = @post.comments.build(params[:comment])
+    unless check_comment_for_spam(@comment.name, @comment.body)
 
-    respond_to do |format|
-      if @comment.save
-        #mailers
-        unless @comment.email.ends_with?('@micahrich.com')
-          CommentMailer.deliver_micah_notifier(@comment)
-        end
-        @comments = Comment.find(:all, :conditions => ["post_id = ? AND email != ? AND email != ?", @comment.post_id, @comment.email, '*@micahrich.com' ])
-          for @reciever in @comments
-            CommentMailer.deliver_comment_notifier(@reciever, @comment)
+      respond_to do |format|
+        if @comment.save
+          #mailers
+          unless @comment.email.ends_with?('@micahrich.com')
+            CommentMailer.deliver_micah_notifier(@comment)
           end
-        
-        flash[:notice] = "Thanks for the comment, I added it below."
-        format.html { redirect_to(@post, @comment) }
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
-      else
-        flash[:comment_error] = "Aw, I couldn't save it. Please double check all the boxes!"
-#        format.html { redirect_to(@post, @comment) }
-        format.html { render :action => :new }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+          @comments = Comment.find(:all, :conditions => ["post_id = ? AND email != ? AND email != ?", @comment.post_id, @comment.email, '*@micahrich.com' ])
+            for @reciever in @comments
+              CommentMailer.deliver_comment_notifier(@reciever, @comment)
+            end
+          
+          flash[:notice] = "Thanks for the comment, I added it below."
+          format.html { redirect_to(@post, @comment) }
+          format.xml  { render :xml => @comment, :status => :created, :location => @comment }
+        else
+          flash[:notice] = "Aw, I couldn't save it. Please double check all the boxes!"
+#          format.html { redirect_to(@post, @comment) }
+          format.html { render :action => :new }
+          format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+        end
       end
+    else
+       flash[:notice] = "Aw, I couldn't save it. Please double check all the boxes!"
+      #format.html { redirect_to(@post, @comment) }
+       format.html { render :action => :new }
     end
   end
 
@@ -62,4 +68,6 @@ class CommentsController < ApplicationController
     def load_post
       @post = Post.find(params[:post_id])
     end
+    
+  
 end

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_post
-
+  
   # GET /comments/new
   # GET /comments/new.xml
 #  def new
@@ -17,12 +17,13 @@ class CommentsController < ApplicationController
   end
 
 
+
   # POST /comments
   # POST /comments.xml
   def create
     @comment = @post.comments.build(params[:comment])
-    unless check_comment_for_spam(@comment.name, @comment.body)
-
+    unless @comment.email_address.blank?
+    
       respond_to do |format|
         if @comment.save
           #mailers
@@ -45,9 +46,9 @@ class CommentsController < ApplicationController
         end
       end
     else
-       flash[:notice] = "Aw, I couldn't save it. Please double check all the boxes!"
+       flash[:notice] = "Aw, you filled out the wrong boxes. Unforuntately, your comment looks like spam!"
       #format.html { redirect_to(@post, @comment) }
-       format.html { render :action => :new }
+       format.html { redirect_to(@post) }
     end
   end
 
@@ -69,5 +70,6 @@ class CommentsController < ApplicationController
       @post = Post.find(params[:post_id])
     end
     
+
   
 end

@@ -3,9 +3,15 @@
 	http://micahrich.com/flickr/stylesheets/awesome.css
 */
 
+
+
 @font-face {
 	font-family: "Quicksand";
 	src: url(".././fonts/QuicksandDash.otf") format("opentype");
+}
+
+#email-address {
+  display:none;
 }
 
 h1 {

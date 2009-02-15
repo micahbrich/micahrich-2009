@@ -20,7 +20,7 @@
   <% @post.comments.each do |comment| %>
     <li id="comment-#{comment.id}">
       <% if comment.website? %>
-        <h4><%= link_to comment.name, "#{comment.website}" %></h4>
+        <h4><a href="<%= comment.website %>"><%= comment.name %></a></h4>
       <% else %>
         <h4><%= comment.name %></h4>
       <% end %>

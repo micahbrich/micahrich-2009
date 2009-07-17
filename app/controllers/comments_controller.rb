@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   end
 
 
-
   # POST /comments
   # POST /comments.xml
   def create
@@ -52,6 +51,25 @@ class CommentsController < ApplicationController
     end
   end
 
+
+  def edit
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+    @comment = @post.comments.find(params[:id])
+
+    respond_to do |format|
+      if @comment.update_attributes(params[:comment])
+        flash[:notice] = '@post.comments was successfully updated.'
+        format.html { redirect_to(@post) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /comments/1
   # DELETE /comments/1.xml

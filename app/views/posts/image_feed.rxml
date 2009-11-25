@@ -8,8 +8,8 @@ xml.rss(:version => "2.0",
     xml.language('en-us')
       for post in @posts
         xml.item do
-          xml.media(:content, :url => image_tag(post.image), :type => "image/jpeg")
-          
+          xml.enclosure(:url => "#{post.image}", :type => "image/jpg")
+          xml.media(:content, :type => "image/jpeg", :medium => "image", :url => "#{post.image}", )
           xml.title(post.title)
           xml.description(newline_and_textilize(truncate(post.description, :length => 46)))      
           xml.author(@author)               

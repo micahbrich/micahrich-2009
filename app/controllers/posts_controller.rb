@@ -38,6 +38,10 @@ class PostsController < ApplicationController
     @posts = Post.find_desc(:limit => 10)
   end
   
+  def image_feed
+    @posts = Post.find_desc(:limit => 10)
+  end
+  
   def show
     @post = Post.find(params[:id])
     @comment = @post.comments.new

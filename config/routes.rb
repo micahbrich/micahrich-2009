@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of regular route:
   map.archive '/archive', :controller => 'posts', :action => 'archive'
   map.feed '/feed', :controller => 'posts', :action => 'feed'
+  map.feed '/imagefeed', :controller => 'posts', :action => 'image_feed'
   map.feed '/imagefeed.:format', :controller => 'posts', :action => 'image_feed'
   map.feed '/feed.:format', :controller => 'posts', :action => 'feed'
   map.about '/about', :controller => 'posts', :action => 'about'

@@ -40,11 +40,6 @@ class PostsController < ApplicationController
   
   def image_feed
     @posts = Post.find_desc(:limit => 10)
-    respond_to do |format|
-      # format.html # show.html.erb
-      format.xml  { render :xml => @post }
-      format.rss  { render :nothing => true }
-    end
   end
   
   def show

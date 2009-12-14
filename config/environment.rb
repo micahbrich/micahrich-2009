@@ -27,9 +27,10 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
    config.gem 'fleakr'
-   config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate', 
-       :source => 'http://gems.github.com'
-   config.gem 'daemons'
+   config.gem "will_paginate"
+   #config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate', 
+   #     :source => 'http://gems.github.com'
+   # config.gem 'daemons'
    # config.gem 'ar_mailer'
        
   # Only load the plugins named here, in the order given. By default, all plugins 
@@ -75,15 +76,15 @@ end
 #flickr
 require 'fleakr'
 
-# ar_mailer  
-require 'action_mailer/ar_mailer'
-
-ActionMailer::Base.perform_deliveries = true  
-ActionMailer::Base.default_charset = 'utf-8'
-ActionMailer::Base.delivery_method = :activerecord
+# # ar_mailer  
+# require 'action_mailer/ar_mailer'
+# 
+# ActionMailer::Base.perform_deliveries = true  
+# ActionMailer::Base.default_charset = 'utf-8'
+# ActionMailer::Base.delivery_method = :activerecord
 
 #configs
 APP_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/app_info.yml")
 FLICKR_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/flickr.yml")
 
-ActionController::AbstractRequest.relative_url_root = "/blog"
+# ActionController::AbstractRequest.relative_url_root = "/blog"

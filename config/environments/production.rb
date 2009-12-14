@@ -23,15 +23,15 @@ config.action_mailer.raise_delivery_errors = false
 
 #delivery method
 #config.action_mailer.delivery_method = :smtp
-ActionMailer::Base.delivery_method = :activerecord
+# ActionMailer::Base.delivery_method = :activerecord
 
 # smtp settings
-config.action_mailer.smtp_settings = {
-  # :address          => 'smtp.micahrich.com',
-  :address          => 'localhost',
-  :port             => 25,
-  :authentication => :login,
-  :domain           => 'micahrich.com',
-  :user_name        => 'blog+micahrich.com',
-  :password         => 'russell'
-}
+# config.action_mailer.smtp_settings = {
+#   # :address          => 'smtp.micahrich.com',
+#   :address          => 'localhost',
+#   :port             => 25,
+#   :authentication => :login,
+#   :domain           => 'micahrich.com',
+#   :user_name        => 'blog+micahrich.com',
+#   :password         => 'russell'
+# }

@@ -1,4 +1,4 @@
-class CommentMailer < ActionMailer::ARMailer
+class CommentMailer < ActionMailer::Base
 
   def micah_notifier(comment)
     recipients  "micah@micahrich.com"

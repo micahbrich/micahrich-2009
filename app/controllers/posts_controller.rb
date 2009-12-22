@@ -24,7 +24,7 @@ class PostsController < ApplicationController
            @post.update_attributes!(:url => photo.url, :title => photo.title, :description => photo.description, :created_at => photo.posted_at, :updated_at => photo.updated_at, :image => photo.large.url, :thumb => photo.small.url, :flickr_id => photo.id )
          end
        end
-      redirect_to root_path
+      redirect_to blog_root_path
     else
       redirect_to login_path
     end

@@ -15,9 +15,9 @@
 <body>
 
   
-  <h1><%= link_to @site_name, root_path %></h1>
+  <h1><%= link_to @site_name, blog_root_path %></h1>
   <ul id="menu">
-    <li id="home"><%= link_to 'home', root_path %></li>
+    <li id="home"><%= link_to 'home', blog_root_path %></li>
     <li id="archive"><%= link_to 'archive', archive_path %></li>
     <li id="about"><%= link_to 'about', about_path %></li>
     <li id="rss"><%= link_to 'feed', feed_path([:xml]) %></li>

@@ -74,7 +74,7 @@ Rails::Initializer.run do |config|
   
 end
 #flickr
-# require 'fleakr'
+require 'fleakr'
 
 # # ar_mailer  
 # require 'action_mailer/ar_mailer'

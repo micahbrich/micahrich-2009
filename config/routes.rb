@@ -3,15 +3,15 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
-  map.archive '/archive', :controller => 'posts', :action => 'archive'
-  map.feed '/feed', :controller => 'posts', :action => 'feed'
-  map.feed '/imagefeed', :controller => 'posts', :action => 'image_feed'
-  map.feed '/imagefeed.:format', :controller => 'posts', :action => 'image_feed'
-  map.feed '/feed.:format', :controller => 'posts', :action => 'feed'
-  map.about '/about', :controller => 'posts', :action => 'about'
+  map.archive '/blog/archive', :controller => 'posts', :action => 'archive'
+  map.feed '/blog/feed', :controller => 'posts', :action => 'feed'
+  map.feed '/blog/imagefeed', :controller => 'posts', :action => 'image_feed'
+  map.feed '/blog/imagefeed.:format', :controller => 'posts', :action => 'image_feed'
+  map.feed '/blog/feed.:format', :controller => 'posts', :action => 'feed'
+  map.about '/blog/about', :controller => 'posts', :action => 'about'
   
-  map.gettr '/gettr', :controller => 'posts', :action => 'gettr'
-  map.resources :posts, :collection => { :feed => :get, :archive => :get, :gettr => :put }, :has_many => :comments
+  map.gettr '/blog/gettr', :controller => 'posts', :action => 'gettr'
+  map.resources :posts, :collection => { :feed => :get, :archive => :get, :gettr => :put }, :has_many => :comments, :as => 'blog'
   
   map.resources :sessions
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-   map.root :controller => "posts"
+   map.blog_root '/blog', :controller => "posts"
 
   # See how all your routes lay out with "rake routes"
 

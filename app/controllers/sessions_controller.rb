@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     session[:password] = params[:password]
     if session[:password] == @password
       flash[:notice] = "Successfully logged in"
-      redirect_to root_path
+      redirect_to blog_root_path
     else
       flash[:notice] = "Sorry, wrong password!"
       redirect_to login_path

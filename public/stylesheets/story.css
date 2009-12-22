@@ -1,0 +1,91 @@
+* { margin:0; padding:0; }
+
+BODY {
+	width: 650px;
+	margin: auto;
+	font: bold 62.5% Helvetica, "Helvetica Neue", Arial, Geneva, sans-serif;
+	background-color: #ff8b81;
+}
+
+html {
+}
+
+ul {
+	height: 285px;
+	background: url(../images/micah.png) no-repeat -90px 0;
+	padding-left: 250px;
+	padding-top: 130px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+ul h2 {
+	text-transform: lowercase;
+	color: #fff;
+	font-size: 4em;
+	margin-bottom: .5em;
+	text-shadow: #cb6f67 -1px -1px 0;
+}
+
+ul li {
+	font-size: 1.8em;
+	list-style-type: none;
+	line-height: 2;
+	list-style-image: url(../images/check.png);
+	list-style-position: inside;
+}
+
+li a {
+	color: #fafafa;
+	text-decoration: line-through;
+	opacity: 0.75;
+	text-shadow: #000000 0 0 0;
+
+}
+
+a {
+	color: #fff;
+	font-style: italic;
+	text-decoration: none;
+}
+
+span.pretty {
+	font: italic normal 40% Georgia, "Times New Roman", Times, serif;
+	vertical-align: 5px;
+	margin-left: 5px;
+}
+
+li a:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+
+p {
+	text-align: justify;
+	color: #7f322b;
+	font: normal normal 1.2em/1.5em Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 1.6em;
+}
+
+div#story {
+	-webkit-column-count:2;
+	-webkit-column-gap:4.5em;
+	-webkit-column-rule: 1px solid #ea7f76;
+	-moz-column-count:2;
+	-moz-column-gap:4.5em;
+	-moz-column-rule: 1px solid #ea7f76;
+	width: 526px;
+	margin-bottom: 4em;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	text-decoration: line-through;
+}
+
+ {
+	
+}

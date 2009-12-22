@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.gettr '/blog/gettr', :controller => 'posts', :action => 'gettr'
   map.resources :posts, :collection => { :feed => :get, :archive => :get, :gettr => :put }, :has_many => :comments, :as => 'blog'
+  map.resources :posts, :collection => { :feed => :get, :archive => :get, :gettr => :put }, :has_many => :comments, :as => 'blog/posts'
   
   map.resources :sessions
   map.login '/login', :controller => 'sessions', :action => 'new'

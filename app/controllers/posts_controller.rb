@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   layout "application", :except => [:feed]
   
   def index
-    @post = Post.find_desc.first
+    @post = Post.sort_by_created_at.first
     @comment = @post.comments.new
     
-    @next = Post.next(@post)
-    @prev = Post.prev(@post)
+    @next = Post.next_date(@post)
+    @prev = Post.prev_date(@post)
   end
 
   def about
@@ -31,7 +31,8 @@ class PostsController < ApplicationController
   end
   
   def archive
-    @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
+    # @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
+    @posts = Post.find :all, :order => 'created_at DESC'
   end
   
   def feed

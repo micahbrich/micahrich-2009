@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090130051637) do
+ActiveRecord::Schema.define(:version => 20091224144719) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20090130051637) do
     t.string   "image"
     t.string   "thumb"
     t.text     "description"
-    t.integer  "flickr_id"
+    t.integer  "flickr_id",   :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end

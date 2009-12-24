@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
   named_scope :prev_date, lambda { |p| {:conditions => ["created_at < ?", p.created_at], :limit => 1, :order => "created_at DESC"} }
   named_scope :next_date, lambda { |p| {:conditions => ["created_at > ?", p.created_at], :limit => 1, :order => "created_at"} }
 
-  attr_accessible :id, :title, :description, :url, :image, :thumb, :created_at, :updated_at, :flickr_id
+  attr_accessible :id, :title, :description, :url, :image, :thumb, :created_at, :updated_at, :flickr_id, :fetch
   
   def self.per_page
     30
@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
     "http://www.micahrich.com/blog/posts/#{self.id}"
   end
   
-  def fetch
+  def self.fetch!
        @flickr ||= Fleakr.api_key = 'fb5cf2883adb61c3978689f570542433'
         @user ||= Fleakr.user('info@micahrich.com')
         @photos ||= @user.sets.last.photos
